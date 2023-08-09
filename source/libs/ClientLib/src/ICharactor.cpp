@@ -30,3 +30,7 @@ void CICharactor::Func_15(int param_1, float *param_2) {
 void CICharactor::Func_15_impl(int param_1, float *param_2) {
     CICharactor::Func_15(param_1, param_2);
 }
+
+float CICharactor::GetRenderY() const {
+    return m_renderY;
+}

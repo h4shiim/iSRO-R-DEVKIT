@@ -8,7 +8,7 @@ link_directories($ENV{LIB})
 include_directories($ENV{INCLUDE})
 
 
-set(DirectX_ROOT ${CMAKE_SOURCE_DIR}/source/third-party/)
+set(DirectX_ROOT ${CMAKE_SOURCE_DIR}/source/third-party/dxsdk)
 find_package(DirectX)
 
 if (NOT DirectX_FOUND)

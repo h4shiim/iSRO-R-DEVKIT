@@ -27,6 +27,7 @@
 #include <NetProcessSecond.h>
 #include <NetProcessThird.h>
 #include <PSCharacterSelect.h>
+#include "IFVipFix.h"
 
 std::vector<const CGfxRuntimeClass *> register_objects;
 std::vector<overrideFnPtr> override_objects;
@@ -56,12 +57,12 @@ void Setup() {
 
     vftableHook(0x0101011C, 10, addr_from_this(&CGInterface::OnCreateIMPL));
 
-    placeHook(0x007390B0, addr_from_this(&CAlramGuideMgrWnd::GetGuide));
+//    placeHook(0x007390B0, addr_from_this(&CAlramGuideMgrWnd::GetGuide));
 
     vftableHook(0x1034984,10, addr_from_this(&CPSVersionCheck::OnCreate));
 
     //fix fps drop
-    JMPFunction(0x00B2D276,0xB2D429);
+    //JMPFunction(0x00B2D276,0xB2D429);
 
     //disable list of channels
     SetNop((void*)0x0096A558,62);
@@ -89,6 +90,12 @@ void Setup() {
    // replaceOffset(0x008a4876, addr_from_this(&CNetProcessThird::RegisterPacketHandlers));
 
     //replaceOffset(0x009ded0d, addr_from_this(&CRStateMgr::FUN_00470060));
+
+#if 1
+    placeHook(0x00B4310B, addr_from_this(&CharacterIcons::SetPositionVipIcon));
+    SetNop(reinterpret_cast<void*>(0x00B4310B), 7);
+#endif
+
 
 
 
@@ -122,3 +129,4 @@ void InstallRuntimeClasses(CGame *) {
         (*it)();
     }
 }
+

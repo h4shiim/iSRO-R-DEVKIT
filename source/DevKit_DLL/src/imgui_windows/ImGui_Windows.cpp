@@ -12,7 +12,7 @@
 
 #include "../MathUtil.h"
 #include "../hooks/Hooks.h"
-#include "About.h"
+//#include "About.h"
 #include "CharacterData.h"
 #include "EntityExplorer.h"
 #include "ErrorMessageTool.h"
@@ -38,7 +38,7 @@ NavMeshTool navmeshExplorer;
 EntityExplorer entityExplorer;
 SoundTool soundTool;
 NotificationTool notificationTool;
-About aboutWnd;
+//About aboutWnd;
 SystemMessage systemMessage;
 ErrorMessageTool errorMessageTool;
 InterfaceTree interfaceTree;
@@ -164,16 +164,16 @@ void ImGui_OnEndScene() {
             ImGui::EndMenu();
         }
 
-        if (ImGui::BeginMenu("Help")) {
-            aboutWnd.MenuItem();
-            if (ImGui::MenuItem("Online Help")) {
-                ShellExecute(NULL,
-                             TEXT("open"),
-                             TEXT("https://florian0.gitlab.io/sro_devkit/"),
-                             NULL, NULL, SW_SHOWNORMAL);
-            }
-            ImGui::EndMenu();
-        }
+//        if (ImGui::BeginMenu("Help")) {
+//            aboutWnd.MenuItem();
+//            if (ImGui::MenuItem("Online Help")) {
+//                ShellExecute(NULL,
+//                             TEXT("open"),
+//                             TEXT("https://florian0.gitlab.io/sro_devkit/"),
+//                             NULL, NULL, SW_SHOWNORMAL);
+//            }
+//            ImGui::EndMenu();
+//        }
 
         ImGui::EndMainMenuBar();
     }
@@ -183,7 +183,7 @@ void ImGui_OnEndScene() {
     soundTool.Render();
     notificationTool.Render();
 //    navmeshExplorer.Render();
-    aboutWnd.Render();
+//    aboutWnd.Render();
     systemMessage.Render();
     errorMessageTool.Render();
     interfaceTree.Render();

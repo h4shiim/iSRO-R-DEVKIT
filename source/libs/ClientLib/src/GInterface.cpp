@@ -3,7 +3,7 @@
 #include "GlobalDataManager.h"
 #include "IFChatViewer.h"
 #include "IFNotify.h"
-#include "IFflorian0Guide.h"
+//#include "IFflorian0Guide.h"
 #include "Juicer/IFTestExample.h"
 
 #include <BSLib/multibyte.h>
@@ -18,9 +18,9 @@ void CGInterface::Render_GDR_AUTO_POTION(bool visible) {
     return reinterpret_cast<void (__thiscall *)(void *, bool)>(0x0079C750)(this, visible);
 }
 
-void CGInterface::CreateFlorian0Event() {
-    CGWnd *guide = GetAlarmManager()->GetGuide(GUIDE_FLORIAN0);
-}
+//void CGInterface::CreateFlorian0Event() {
+//    CGWnd *guide = GetAlarmManager()->GetGuide(GUIDE_FLORIAN0);
+//}
 
 CAlramGuideMgrWnd *CGInterface::GetAlarmManager() {
     return m_IRM.GetResObj<CAlramGuideMgrWnd>(GDR_ALRAM_GUIDE_MGR_WND, 1);
@@ -35,7 +35,7 @@ bool CGInterface::OnCreateIMPL(long ln) {
 
     AfterOnCreate();
 
-    ShowMessage_Notice(L"Welcome to A7aKit");
+    ShowMessage_Notice(L"This is Ruin development test environment!");
     return b;
 }
 
@@ -44,10 +44,10 @@ void CGInterface::BeforeOnCreate() {
 }
 
 void CGInterface::AfterOnCreate() {
-    CreateFlorian0Event();
+//    CreateFlorian0Event();
 
     RECT testRect = {409,137,350,350};
-    (CIFTestExample*)CGWnd::CreateInstance(this, GFX_RUNTIME_CLASS(CIFTestExample), testRect, 134021, 0);
+//    (CIFTestExample*)CGWnd::CreateInstance(this, GFX_RUNTIME_CLASS(CIFTestExample), testRect, 134021, 0);
 }
 
 void CGInterface::ShowMessage_Quest(const std::n_wstring &msg) {

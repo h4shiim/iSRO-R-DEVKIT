@@ -23,3 +23,4 @@ void OnPreInitGameAssets(void_cgame_handler_t handler);
 void OnPostInitGameAssets(void_cgame_handler_t handler);
 
 void DebugPrintCallback(const char *buffer);
+

@@ -10,7 +10,7 @@ void CIFFacebookLinkAlram::OnFacebookNavigate(CIFWnd* p_wnd,int confirmed)
 {
     if(p_wnd->IsSame(GFX_RUNTIME_CLASS(CIFMessageBox))){
         if(confirmed == 1)
-            ShellExecute(NULL, "open", "https://www.google.com", NULL, NULL, SW_SHOWNORMAL);
+            ShellExecute(NULL, "open", "https://www.youtube.com", NULL, NULL, SW_SHOWNORMAL);
 
         CIFMessageBox* p_msgbox = (CIFMessageBox*) p_wnd;
         g_pCGInterface->sub_85D9C0(p_msgbox,0,0);

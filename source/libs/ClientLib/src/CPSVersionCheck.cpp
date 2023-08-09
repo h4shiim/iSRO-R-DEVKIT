@@ -18,8 +18,8 @@ bool CPSVersionCheck::OnCreate(int ln)
 
         long hWndState = GetWindowLongA(g_CGame->GetHWnd(), GWL_STYLE);
 
-        static int hWndwidth = 600;
-        static int hWndheight = 400;
+        static int hWndwidth = 400;
+        static int hWndheight = 148;
 
         RECT hWndRect = {0,0,hWndwidth,hWndheight};
         AdjustWindowRect(&hWndRect,hWndState,0);

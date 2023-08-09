@@ -49,3 +49,4 @@ void OnPostInitGameAssets(void_cgame_handler_t handler) {
 void DebugPrintCallback(const char *buffer) {
     printf(buffer);
 }
+

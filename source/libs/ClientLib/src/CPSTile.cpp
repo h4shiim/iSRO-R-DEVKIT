@@ -15,11 +15,11 @@ bool CPSTile::OnCreateIMPL(long ln) {
             std::n_wstring m_text = m_version->GetText();
 
             if(m_text.find(L"Data") != std::string::npos)
-                m_version->SetText(L"A7aKit -> Data");
+                m_version->SetText(L"Personal");
             else
-                m_version->SetText(L"A7aKit -> Version");
+                m_version->SetText(L"v230");
 
-            m_version->m_FontTexture.SetColor(0xffff00);
+            m_version->m_FontTexture.SetColor(0x00ff00);
 
         }
     }

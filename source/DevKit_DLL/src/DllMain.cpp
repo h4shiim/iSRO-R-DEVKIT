@@ -1,11 +1,14 @@
-#include <IFChatViewer.h>
-#include <IFChatOptionBoard.h>
-#include "hooks/Hooks.h"
-#include "Util.h"
-#include "imgui_windows/ImGui_Windows.h"
-
+#include "IFDecoratedStatic.h"
+#include "IFFacebookLinkAlram.h"
 #include "IFflorian0.h"
 #include "IFflorian0Guide.h"
+#include "Util.h"
+#include "hooks/Hooks.h"
+#include "imgui_windows/ImGui_Windows.h"
+#include <IFChatOptionBoard.h>
+#include <IFChatViewer.h>
+#include "IFVipFix.h"
+
 
 extern "C" _declspec(dllexport) BOOL WINAPI DllMain(HINSTANCE hModule, DWORD fdwReason, LPVOID lpReserved) {
     if (fdwReason == DLL_PROCESS_ATTACH) {
@@ -13,9 +16,9 @@ extern "C" _declspec(dllexport) BOOL WINAPI DllMain(HINSTANCE hModule, DWORD fdw
         Setup();
 
         // Inject all the new objects
-        //RegisterObject(&GFX_RUNTIME_CLASS(CIFflorian0));
+        RegisterObject(&GFX_RUNTIME_CLASS(CIFflorian0));
         RegisterObject(&GFX_RUNTIME_CLASS(CIFflorian0Guide));
-        //OverrideObject<CIFMainPopup, 0x117B39C>();
+//        OverrideObject<CIFMainPopup, 0x117B39C>();
 
 #ifdef CONFIG_IMGUI
         OnCreate(ImGui_OnCreate);

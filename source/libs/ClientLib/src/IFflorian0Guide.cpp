@@ -24,7 +24,7 @@ int CIFflorian0Guide::OnMouseLeftUp(int a1, int x, int y)
 	BS_DEBUG_LOW("> " __FUNCTION__ "(%d, %d, %d)", a1, x, y);
 
 	CGEffSoundBody::get()->PlaySound(L"snd_quest");
-    MessageBox(NULL, TEXT("Hello World"), TEXT("Hello World"), MB_OK);
+    MessageBox(NULL, TEXT("Hello World Zeby"), TEXT("Hello World Zeby"), MB_OK);
 
 	return 0;
 }
