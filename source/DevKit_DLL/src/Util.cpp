@@ -92,8 +92,7 @@ void Setup() {
     //replaceOffset(0x009ded0d, addr_from_this(&CRStateMgr::FUN_00470060));
 
 #if 1
-    placeHook(0x00B4310B, addr_from_this(&CharacterIcons::SetPositionVipIcon));
-    SetNop(reinterpret_cast<void*>(0x00B4310B), 7);
+    placeHook(0x00B4310B, addr_from_this(&SetPositionVipIcon));
 #endif
 
 
